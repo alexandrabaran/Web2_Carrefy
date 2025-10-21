@@ -8,4 +8,4 @@
  La base de datos fue cargada con datos iniciales de los productos que aparecerian en el sitio y las caracteristicas de cada uno (nombre, stock y precio). Tambien con categorias a las que estos corresponden.
  Cada tabla contiene ID autoincremental (clave primaria) para facilitar la manipulacion de los datos a la hora del desarrollo del sitio.
 
-![Diagrama entidad relacion](https://github.com/alexandrabaran/Web2_Carrefy/blob/main/CarrefyDER.png)
+![Diagrama entidad relacion](https://github.com/alexandrabaran/Web2_Carrefy/blob/main/CarrefyDER.png) 
