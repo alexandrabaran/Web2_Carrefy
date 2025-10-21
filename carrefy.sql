@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 12, 2024 at 03:05 PM
+-- Generation Time: Oct 21, 2025 at 12:35 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -24,25 +24,46 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `admin_id` int(11) NOT NULL,
+  `admin_user` varchar(45) NOT NULL,
+  `admin_pass` varchar(60) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`admin_id`, `admin_user`, `admin_pass`) VALUES
+(1, 'webadmin', '$2a$12$eNbUfOoIS4J8ZLeebj24ceZPb5C0wCMIj9mzra7CYMm1GjNH1xSGi');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `categories`
 --
 
 CREATE TABLE `categories` (
   `category_id` int(11) NOT NULL,
-  `category_name` varchar(45) NOT NULL
+  `category_name` varchar(45) NOT NULL,
+  `category_supp` varchar(45) NOT NULL,
+  `category_shelve` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `categories`
 --
 
-INSERT INTO `categories` (`category_id`, `category_name`) VALUES
-(1, 'Lacteos'),
-(2, 'Panificados'),
-(3, 'Granja'),
-(4, 'Verduleria'),
-(5, 'Almacen'),
-(6, 'Limpieza');
+INSERT INTO `categories` (`category_id`, `category_name`, `category_supp`, `category_shelve`) VALUES
+(1, 'Lacteos', 'Amanecer S.A.', 8),
+(2, 'Panificados', 'Panacity S.R.L', 5),
+(3, 'Granja', 'Pluma Blanca S. Coop.', 1),
+(4, 'Verduleria', 'Mercado Central', 7),
+(5, 'Almacen', 'Carrefour Argentina S.A.', 2),
+(6, 'Limpieza', 'Todo Limpio S.A.S.', 4);
 
 -- --------------------------------------------------------
 
@@ -63,7 +84,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `product_name`, `product_price`, `product_stock`, `category_id`) VALUES
-(1, 'Leche', 1450, 33, 1),
+(1, 'Aceite girasol', 2024.6, 0, 5),
 (2, 'Tomate', 3500, 20, 4),
 (3, 'Pollo', 8800, 14, 3),
 (4, 'Huevos', 3090, 12, 3),
@@ -76,11 +97,18 @@ INSERT INTO `products` (`product_id`, `product_name`, `product_price`, `product_
 (11, 'Lechuga', 3590, 11, 4),
 (12, 'Zanahoria', 1490, 14, 4),
 (13, 'Queso untable', 2457.5, 22, 1),
-(14, 'Tostadas', 1390, 15, 2);
+(14, 'Tostadas', 1390, 15, 2),
+(15, 'Leche', 1750, 0, 1);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`admin_id`);
 
 --
 -- Indexes for table `categories`
@@ -100,6 +128,12 @@ ALTER TABLE `products`
 --
 
 --
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
@@ -109,7 +143,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables
