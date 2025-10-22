@@ -1,0 +1,30 @@
+<?php require 'templates/header.phtml'; ?>
+
+<h3>Agregar producto</h3>
+
+<form class="form" action="add-product" method="POST">
+<div>  
+        <label>Nombre del producto: </label><input required type="text" name="name">
+</div>
+<div>  
+        <label>Categoría: </label>
+        <select name="category" required>
+                <?php foreach($categories as $category):?>
+                <option value='<?=$category->category_id?>'><?=$category->category_name?></option>
+                <?php endforeach ?>
+        </select>
+</div>
+<div>  
+        <label>Precio: </label><input required type="double" name="price">
+</div>
+<div>  
+        <label>Cantidad disponible: </label><input required type="number" name="stock">
+</div>
+ <button type="submit"> Añadir producto </button>
+</form>
+
+<a href="<?=BASE_URL?>products-list"> Ver lista de Productos </a>
+<a href="<?=BASE_URL?>logout">LogOut</a>
+<a href="<?=BASE_URL?>home">Volver al inicio</a>
+
+<?php require 'templates/footer.phtml'; ?>

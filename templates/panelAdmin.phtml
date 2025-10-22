@@ -1,0 +1,45 @@
+<?php require 'templates/header.phtml'; ?>
+
+<h2>Panel administrador</h2>
+
+<a href="<?=BASE_URL?>add-product"> Agregar producto </a>
+
+    <div>
+        <ul>
+            <?php foreach($products as $product): ?>
+            <li> 
+                 <div>
+                     <h3><?= $product->product_name?></h5>
+                     <p>Categoría: <?=$product->category_name?> </p>
+                     <div><a href="<?=BASE_URL?>product-details/<?= $product->product_id ?>">Ver detalles</a>
+                     <a href="<?=BASE_URL?>delete-product"> Borrar producto </a>
+                     <a href="<?=BASE_URL?>update-product"> Modificar producto </a>
+                </div>
+            </li>
+            <?php endforeach ?>
+        </ul>
+    </div>
+
+
+<a href="<?=BASE_URL?>add-category"> Agregar categoria </a>
+
+   <div>
+        <ul>
+            <?php foreach($categories as $category): ?>
+            <li> 
+                 <div>
+                     <h3><?= $category->category_name?></h5>
+                     <p>Categoría: <?=$category->category_name?> </p>
+                     <div><a href="<?=BASE_URL?>category-details/<?= $category->category_id ?>">Ver detalles</a>
+                     <a href="<?=BASE_URL?>delete-category"> Borrar categoria </a>
+                     <a href="<?=BASE_URL?>update-category"> Modificar categoria </a>
+                </div>
+            </li>
+            <?php endforeach ?>
+        </ul>
+    </div>
+
+<a href="<?=BASE_URL?>logout">Cerrar sesion</a>
+<a href="<?=BASE_URL?>home">Volver al inicio</a>
+
+<?php require 'templates/footer.phtml'; ?>

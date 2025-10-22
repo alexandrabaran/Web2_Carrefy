@@ -1,0 +1,20 @@
+<?php require_once "templates/header.phtml"; ?>
+
+<h2>Nuestras categorias de producto</h2>
+
+    <div class="element-container">
+       
+            <?php foreach($categories as $category): ?>
+            
+                 <div class="card">
+                     <h3><?= $category->category_name?></h3>
+                     <a href="<?=BASE_URL?>category-details/<?= $category->category_id ?>">Ver detalles</a>
+                </div>
+            
+            <?php endforeach ?>
+        
+    </div>
+
+<a href="<?=BASE_URL?>home">Volver al inicio</a>
+
+<?php require_once "templates/footer.phtml"; ?>

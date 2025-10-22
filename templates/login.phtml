@@ -1,0 +1,14 @@
+<?php require 'templates/header.phtml'; ?>
+
+<h2>Login</h2>
+
+<form id= "form" action="panel-admin" method="POST">
+   <input type="text" name="user" placeholder="Usuario" required>
+   <input type="password" name="password" placeholder="Contraseña" required>
+
+   <button type="submit"> Ingresar</button>
+</form>
+
+<a href="<?=BASE_URL?>home">Volver al inicio</a>
+
+<?php require 'templates/footer.phtml'; ?>

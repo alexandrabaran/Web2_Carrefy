@@ -1,0 +1,25 @@
+<?php require_once "templates/header.phtml"; ?>
+
+<nav>
+    <a href="<?=BASE_URL?>login">Acceder como administrador</a></li>
+</nav>
+
+<h2>Nuestros productos</h2>
+
+    <div class="element-container">
+        
+            <?php foreach($products as $product): ?>
+             
+                 <div class="card">
+                     <h3><?= $product->product_name?></h5>
+                     <p>Categoría: <?=$product->category_name?> </p>
+                     <a href="<?=BASE_URL?>product-details/<?= $product->product_id ?>">Ver detalles</a>
+                </div>
+            
+            <?php endforeach ?>
+        
+    </div>
+
+<a href="<?=BASE_URL?>home">Volver al inicio</a>
+
+<?php require_once "templates/footer.phtml"; ?>

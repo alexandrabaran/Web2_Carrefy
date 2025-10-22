@@ -1,0 +1,20 @@
+<?php require 'templates/header.phtml'; ?>
+
+<nav>
+    <a href="<?=BASE_URL?>login">Acceder como administrador</a>
+</nav>
+
+<h2>Detalle de la categoria:</h2>
+    <ul>
+        <?php foreach($categories as $category): ?>
+        <li><h4>Nombre: <?= $category->category_name?></h4></li>
+        <li>Proveedor: <?= $category->category_supp?></li>
+        <li>Gondola: <?= $category->category_shelve?></li>
+        <?php endforeach ?>
+    </ul>
+
+<a href="<?=BASE_URL?>categories-list">Volver al listado</a>
+
+<a href="<?=BASE_URL?>home">Volver al inicio</a>
+
+<?php require 'templates/footer.phtml'; ?>

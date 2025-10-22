@@ -1,0 +1,25 @@
+<?php require 'templates/header.phtml'; ?>
+
+<h3>Modificar categoria</h2>
+
+<form action='update-categorie/<?=$id?>' method='POST'>
+    <div>
+        <label>Nuevo nombre de la categoria: </label>
+        <input name='name' type='text' value='name' required>
+    </div>
+    <div>
+        <label>Proveedor: </label>
+        <input name='supp' type='text' value='supp' required>
+    </div>
+    <div>
+        <label>Gondola: </label>
+        <input name='shelve' type='number' value='shelve' required>
+    </div>
+
+    <button type='submit'>Editar categoria</button>
+</form>
+
+<a href="<?=BASE_URL?>categories-list">Volver al listado</a>
+<a href="<?=BASE_URL?>home">Volver al inicio</a>
+
+<?php require 'templates/footer.phtml'; ?>

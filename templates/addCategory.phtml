@@ -1,0 +1,23 @@
+<?php require 'templates/header.phtml'; ?>
+
+<h3>Agregar categoria</h3>
+
+<form class="form" action="add-product" method="POST">
+<div>  
+        <label>Nombre de la categoria: </label><input required type="text" name="name">
+</div>
+
+<div>  
+        <label>Proovedor: </label><input required type="text" name="supp">
+</div>
+<div>  
+        <label>Gondola: </label><input required type="number" name="shelve">
+</div>
+ <button type="submit"> Añadir categoria </button>
+</form>
+
+<a href="<?=BASE_URL?>category-list"> Ver lista de Categorias </a>
+<a href="<?=BASE_URL?>logout">Log Out</a>
+<a href="<?=BASE_URL?>home">Volver al inicio</a>
+
+<?php require 'templates/footer.phtml'; ?>
